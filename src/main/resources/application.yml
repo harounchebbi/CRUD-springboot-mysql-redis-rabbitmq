@@ -1,0 +1,90 @@
+#management endpoints on a separate port
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #<2>
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+
+  # ===============================
+  # = Mysql configurations
+  # ===============================
+  datasource:
+    url: jdbc:mysql://localhost:3306/crudbase?useUnicode=true&characterEncoding=UTF8&useSSL=false
+    username: root
+    password: root
+
+  # ===============================
+  # = Redis configurations
+  # ===============================ß
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 0
+    jedis:
+      pool:
+        max-idle: 8
+        max-wait:
+        min-idle: 0
+
+  rabbitmq:
+    addresses: localhost:32777
+    adminAddresses: http://localhost:15672
+    nodes: rabbit@localhost
+    username: guest
+    password: guest
+    virtual_host: /
+    useSSL: false
+    sslProperties:
+    ssl:
+      keyStore:
+      keyStorePassphrase:
+      trustStore:
+      trustStorePassphrase:
+    channelCacheSize: 100
+
+
+  # ===============================
+  # = JPA configurations
+  # ===============================
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: MYSQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+# ===============================
+# = Logging configurations
+# ===============================
+logging:
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n"
+    file: "%d %-5level [%thread] %logger{0} : %msg%n"
+  level:
+    root: WARN
+    com.app.crud: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org:
+      hibernate.SQL: DEBUG
+      hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+
+
+
