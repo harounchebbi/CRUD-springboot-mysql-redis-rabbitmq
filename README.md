@@ -28,7 +28,8 @@ mvn spring-boot:run
 
 ## MySQL
 
-MySQL
+1. Create a database in your MySQL instance.
+2. Update the application.yaml file in the `src/main/resources` folder with the URL, username and password for your MySQL instance. The table schema will be created for you in the database.
 
 ## RabbitMQ
 
@@ -40,10 +41,21 @@ Redis
 
 ## Swagger
 
-swagger
+### Endpoints
 
+|Method | 	Url		| 	Description |
+|-------| ------- | ----------- |
+|GET| 	/info	| 	info / heartbeat - provided by boot |
+|GET| /health |	application health - provided by boot|
+|GET| /v2/api-docs| 	swagger json|
+|GET|/swagger-ui.html| 	swagger html|
+|GET|/v1/person/{id}| 	get person by id|
+|GET|/v1/persons| 	get N persons with an offset|
+|PUT|/v1/person| 	add / update person|
 
+Screenshot
 
+![List APIs](img/list.png "List API")
 
 ## Running the tests
 
@@ -56,11 +68,6 @@ Explain what these tests test and why
 ```
 Give an example
 ```
-
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
