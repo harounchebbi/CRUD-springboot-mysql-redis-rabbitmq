@@ -32,14 +32,23 @@ mvn spring-boot:run
 2. Update the application.yaml file in the `src/main/resources` folder with the URL, username and password for your MySQL instance. The table schema will be created for you in the database.
 
 ## RabbitMQ
+Real time event updates are managed in RabbitMQ. Two scenarios here : 
 
-rabbitmq
+```shell
+# Updating the list when a user is created
+# Updating the list when a user is deleted
+```
 
 ## Redis
 
-Redis
+We are using Redis as our caching system. The configuration in application.yaml remains the same. 
+
+## JWT
+
+jwt 
 
 ## Swagger
+We used Swagger to easily generate REST API documentation for our project. 
 
 ### Endpoints
 
