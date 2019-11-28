@@ -43,10 +43,6 @@ Real time event updates are managed in RabbitMQ. Two scenarios here :
 
 We are using Redis as our caching system. The configuration in application.yaml remains the same. 
 
-## JWT
-
-jwt 
-
 ## Swagger
 We used Swagger to easily generate REST API documentation for our project. 
 
@@ -58,32 +54,14 @@ We used Swagger to easily generate REST API documentation for our project.
 |GET| /health |	application health - provided by boot|
 |GET| /v2/api-docs| 	swagger json|
 |GET|/swagger-ui.html| 	swagger html|
-|GET|/v1/person/{id}| 	get person by id|
-|GET|/v1/persons| 	get N persons with an offset|
-|PUT|/v1/person| 	add / update person|
+|GET|/api/users/{id}| 	get user by id|
+|GET|/api/users| 	get N users with an offset|
+|POST|/api/users| create user|
+|PUT|/api/users/{id}| update user|
+|DELETE|/api/users/{id}| delete user|
+|GET|/api/users/me| current user|
+|POST|/auth/signin| authenticate user|
 
 Screenshot
 
 ![List APIs](img/list.png "List API")
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
