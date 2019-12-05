@@ -61,7 +61,3 @@ We used Swagger to easily generate REST API documentation for our project.
 |DELETE|/api/users/{id}| delete user|
 |GET|/api/users/me| current user|
 |POST|/auth/signin| authenticate user|
-
-Screenshot
-
-![List APIs](img/list.png "List API")
